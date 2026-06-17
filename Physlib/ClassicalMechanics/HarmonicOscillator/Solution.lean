@@ -941,7 +941,7 @@ lemma return_time (IC : InitialConditions) (non_trivial : (IC.x₀ ≠ 0 ∨ IC.
       ring_nf
     _ = c * (vv +   xx * S.ω^2) / det  := by simp [S.ω_ne_zero]
     _ = c * det / det := by rfl
-    _ = c := by simp [det_ne_zero]
+    _ = c := by ring_nf
     _ = _ := by rfl
   let ⟨n, hn⟩ := (Real.cos_eq_one_iff (S.ω * t)).mp (Eq.symm hcos)
   use n
