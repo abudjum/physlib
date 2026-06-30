@@ -225,7 +225,6 @@ lemma totalTimeDerivative_hasZeroVarGradient [CompleteSpace X] {δL : Time → X
   rcases h with ⟨F,hF_contDiff, hF⟩
   let traj_deriv := fun (G : Time → ℝ) t => fderiv ℝ G t 1
   let F_traj := fun (q : Time → X) t => F t (q t)
-
   apply HasVarGradientAt.intro _
   · apply HasVarAdjDerivAt.congr (F := fun q' => traj_deriv (F_traj q'))
     · apply HasVarAdjDerivAt.comp (F := traj_deriv) (G := F_traj)
