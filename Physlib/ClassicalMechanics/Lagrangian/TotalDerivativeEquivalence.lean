@@ -9,6 +9,7 @@ public import Physlib.Mathematics.InnerProductSpace.Basic
 public import Mathlib.Analysis.InnerProductSpace.Dual
 public import Physlib.SpaceAndTime.Time.Derivatives
 public import Mathlib.Analysis.Calculus.ContDiff.CPolynomial
+public import Physlib.Mathematics.VariationalCalculus.HasVarGradient
 /-!
 
 # Equivalent Lagrangians under Total Derivatives
