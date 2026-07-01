@@ -272,7 +272,7 @@ coincide (or neither of them has a variational derivative).
 -/
 lemma totalTimeDerivative_varGradient_equivalenvce [CompleteSpace X] (L L' : Time → X → X → ℝ)
     (htot : IsTotalTimeDerivative (L' - L))
-    (q : Time → X)    (hq : ContDiff ℝ ∞ q):
+    (q : Time → X) (hq : ContDiff ℝ ∞ q):
     (δ (q':=q), ∫ t, L' t (q' t) (fderiv ℝ q' t 1)) =
        (δ (q':=q), ∫ t, L t (q' t) (fderiv ℝ q' t 1)) := by
   let δL := (fun t q v => L' t q v - L t q v)
