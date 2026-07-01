@@ -251,7 +251,7 @@ lemma totalTimeDerivative_hasZeroVarGradient [CompleteSpace X] {δL : Time → X
 If two lagrangians, L and L', differ by a total time derivative, and L has a variational derivative
 grad, then so does L'.
  -/
-lemma totalTimeDerivative_HasVarGradientAt_equivalence [CompleteSpace X] (L δL : Time → X → X → ℝ)
+lemma totalTimeDerivative_hasVarGradientAt_equivalence [CompleteSpace X] (L δL : Time → X → X → ℝ)
     (hδL : IsTotalTimeDerivative δL)
     (q : Time → X)    (hq : ContDiff ℝ ∞ q) (grad : Time → X)
     (hgrad :  HasVarGradientAt (fun q' t => L t (q' t) (fderiv ℝ  q' t 1)) grad q) :
@@ -280,7 +280,7 @@ lemma totalTimeDerivative_varGradient_equivalenvce [CompleteSpace X] (L L' : Tim
   · apply HasVarGradientAt.varGradient
     have h_triv : L' = L + (L' - L) := by module
     rw [h_triv]
-    apply totalTimeDerivative_HasVarGradientAt_equivalence
+    apply totalTimeDerivative_hasVarGradientAt_equivalence
     · exact htot
     · exact hq
     · rcases hL with ⟨grad, hgrad⟩
@@ -291,7 +291,7 @@ lemma totalTimeDerivative_varGradient_equivalenvce [CompleteSpace X] (L L' : Tim
       apply HasVarGradientAt.varGradient
       have h_triv : L = L' +(-(L' - L)) := by module
       rw [h_triv]
-      apply totalTimeDerivative_HasVarGradientAt_equivalence
+      apply totalTimeDerivative_hasVarGradientAt_equivalence
       · apply isTotalTimeDerivative_neg
         exact htot
       · exact hq
