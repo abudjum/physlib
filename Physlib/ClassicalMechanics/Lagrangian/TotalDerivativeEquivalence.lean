@@ -220,7 +220,7 @@ lemma isTotalTimeDerivative_neg {δL : Time → X → X → ℝ} (h :  IsTotalTi
 Total time derivative has a variational derivative, which is zero
  -/
 lemma totalTimeDerivative_hasZeroVarGradient [CompleteSpace X] {δL : Time → X → X → ℝ}
-    (h : IsTotalTimeDerivative δL) (q : Time → X)    (hq : ContDiff ℝ ∞ q):
+    (h : IsTotalTimeDerivative δL) (q : Time → X) (hq : ContDiff ℝ ∞ q):
      HasVarGradientAt (fun q' t => δL t (q' t) (∂ₜ q' t)) (fun _ => 0) q := by
   rcases h with ⟨F,hF_contDiff, hF⟩
   let traj_deriv := fun (G : Time → ℝ) t => fderiv ℝ G t 1
